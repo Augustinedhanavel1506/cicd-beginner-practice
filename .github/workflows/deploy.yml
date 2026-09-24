@@ -10,8 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Say Hello
-        run: echo "Hello! My CI/CD pipeline is running."
+      - name: Get my code
+        uses: actions/checkout@v4
 
-      - name: Show Repository
-        run: echo "GitHub Actions received my code successfully."
+      - name: Check index.html
+        run: test -f index.html
+
+      - name: Check HTML heading
+        run: grep -q "<h1>" index.html
+
+      - name: CI successful
+        run: echo "HTML checks passed successfully!"
