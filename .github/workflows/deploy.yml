@@ -1,0 +1,17 @@
+name: My First CI/CD Practice
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  practice:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say Hello
+        run: echo "Hello! My CI/CD pipeline is running."
+
+      - name: Show Repository
+        run: echo "GitHub Actions received my code successfully."
