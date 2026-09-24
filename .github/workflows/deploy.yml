@@ -21,3 +21,9 @@ jobs:
 
       - name: CI successful
         run: echo "HTML checks passed successfully!"
+
+      - name: Upload website artifact
+        uses: actions/upload-artifact@v4
+        with:
+           name: website
+           path: index.html 
