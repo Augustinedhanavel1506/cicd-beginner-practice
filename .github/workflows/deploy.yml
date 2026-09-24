@@ -18,6 +18,12 @@ jobs:
 
       - name: Check HTML heading
         run: grep -q "<h1>" index.html
+        
+      - name: Build website
+        run: |
+          mkdir -p build
+          cp index.html build/index.html
+          echo "Website build completed!"
 
       - name: CI successful
         run: echo "HTML checks passed successfully!"
